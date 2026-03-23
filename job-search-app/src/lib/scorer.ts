@@ -43,6 +43,32 @@ const EXCLUDE_INDUSTRY_PATTERNS = [
   /\bconsulting firm\b/i,
 ];
 
+// Locations outside US where we don't want to work
+const FOREIGN_LOCATION_PATTERNS = [
+  /\bisrael\b|\btel aviv\b/i,
+  /\bbrazil\b|\bsão paulo\b|\bsao paulo\b/i,
+  /\bnetherlands\b|\bamsterdam\b/i,
+  /\bireland\b|\bdublin\b/i,
+  /\bunited kingdom\b|\bgreat britain\b|\blondon\b|\bmanchester\b|\b\buk\b/i,
+  /\bindia\b|\bbangalore\b|\bbengaluru\b|\bdelhi\b/i,
+  /\bgermany\b|\bmunich\b|\bberlin\b/i,
+  /\bfrance\b|\bparis\b/i,
+  /\bspain\b|\bbarcelona\b|\bmadrid\b/i,
+  /\bdenmark\b|\bcopenhagen\b/i,
+  /\bsweden\b|\bstockholm\b/i,
+  /\bportugal\b|\blisbon\b/i,
+  /\bsingapore\b/i,
+  /\bjapan\b|\btokyo\b|\bosaka\b/i,
+  /\bsouth korea\b|\bkorea\b|\bseoul\b/i,
+  /\bhong kong\b/i,
+  /\bindonesia\b|\bjakarta\b/i,
+  /\bthailand\b/i,
+  /\bsouth africa\b/i,
+  /\bcanada\b|\btoronto\b|\bvancouver\b/i,
+  /\bmexico\b/i,
+  /\bpoland\b/i,
+];
+
 export function scoreJob(job: JobListing): ScoredJob {
   let score = 0;
   const reasons: string[] = [];
@@ -59,6 +85,29 @@ export function scoreJob(job: JobListing): ScoredJob {
       if (pattern.test(job.description)) {
         return { ...job, match_score: 0, match_reasons: ["Excluded: industry not targeted"] };
       }
+    }
+  }
+
+  // Location exclusion:
+  // - Foreign locations: always reject
+  // - Non-target US cities (not NYC/LA/Philly): reject unless explicitly remote
+  if (job.location) {
+    const locLower = job.location.toLowerCase().trim();
+
+    for (const pattern of FOREIGN_LOCATION_PATTERNS) {
+      if (pattern.test(locLower)) {
+        return { ...job, match_score: 0, match_reasons: ["Excluded: location outside US"] };
+      }
+    }
+
+    const isRemote = /\bremote\b/i.test(locLower);
+    const isNationwide = /^(united states|usa?|u\.s\.?)\s*$/.test(locLower);
+    const isNYC = /new york|nyc|manhattan|brooklyn|queens|new jersey/i.test(locLower);
+    const isLA = /los angeles|\bla,|\bla\b|santa monica|culver city|west hollywood|burbank|pasadena|long beach/i.test(locLower);
+    const isPhilly = /philadelphia|philly/i.test(locLower);
+
+    if (!isRemote && !isNationwide && !isNYC && !isLA && !isPhilly) {
+      return { ...job, match_score: 0, match_reasons: ["Excluded: not in NYC/LA/Philly and not remote"] };
     }
   }
 
@@ -107,7 +156,7 @@ export function scoreJob(job: JobListing): ScoredJob {
   const desc = (job.description || '').toLowerCase();
 
   if (/japan|apac|asia.?pacific|japanese/i.test(desc)) {
-    score += 8; reasons.push("APAC/Japanese language opportunity");
+    score += 2; reasons.push("APAC exposure (minor bonus)");
   }
   if (/demo|presentation|client.?facing|customer.?facing/i.test(desc)) {
     score += 5; reasons.push("Demo/presentation skills valued");

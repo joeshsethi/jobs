@@ -90,4 +90,12 @@ function initializeDb(db: Database.Database) {
     CREATE INDEX IF NOT EXISTS idx_jobs_match_score ON jobs(match_score DESC);
     CREATE INDEX IF NOT EXISTS idx_applications_status ON applications(status);
   `);
+
+  // Migrations
+  const hasIntel = db.prepare(
+    "SELECT name FROM pragma_table_info('interview_prep') WHERE name = 'company_intel'"
+  ).get();
+  if (!hasIntel) {
+    db.exec('ALTER TABLE interview_prep ADD COLUMN company_intel TEXT');
+  }
 }

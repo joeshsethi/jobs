@@ -62,33 +62,472 @@ SPORTS_TECH_COMPANIES = [
 
 # Greenhouse board slugs for target companies
 GREENHOUSE_BOARDS = {
+    # AI / ML
     "Anthropic": "anthropic",
-    "Rippling": "rippling",
+    "Cohere": "cohere",
+    "Scale AI": "scaleai",
+    "Runway": "runwayml",
+    "Synthesia": "synthesia",
+    "Stability AI": "stabilityai",
+    "Jasper": "jasper",
+    "Writer": "writer",
+    "Glean": "glean",
+    "Harvey": "harvey",
+    "Sierra": "sierra",
+    "Moveworks": "moveworks",
+    "Guru": "guru",
+    "Cogito": "cogito",
+
+    # Cloud & Data Infrastructure
     "MongoDB": "mongodb",
     "Datadog": "datadog",
-    "Benchling": "benchling",
+    "Snowflake": "snowflake",
+    "Databricks": "databricks",
+    "Elastic": "elastic",
+    "Confluent": "confluent",
+    "dbt Labs": "dbtlabs",
+    "Fivetran": "fivetran",
+    "Airbyte": "airbyte",
+    "Starburst": "starburst",
+    "Imply": "imply",
+    "ClickHouse": "clickhouse",
+    "SingleStore": "singlestore",
+    "CockroachLabs": "cockroachlabs",
+    "PlanetScale": "planetscale",
+    "Crunchy Data": "crunchydata",
+    "Timescale": "timescale",
     "Astronomer": "astronomer",
-    "Navan": "navan",
-    "Warp": "warp",
-    "Synthesia": "synthesia",
+    "Prefect": "prefect",
+    "Dagster": "dagster",
+    "Hightouch": "hightouch",
+    "Census": "census",
+    "Rudderstack": "rudderstack",
+    "Segment": "segment",
+    "Monte Carlo": "montecarlodata",
+    "Atlan": "atlan",
+    "Collibra": "collibra",
+    "Alation": "alation",
+
+    # Security
+    "CrowdStrike": "crowdstrike",
+    "Palo Alto Networks": "paloaltonetworks",
+    "Zscaler": "zscaler",
+    "Cloudflare": "cloudflare",
+    "Okta": "okta",
+    "Lacework": "lacework",
+    "Snyk": "snyk",
+    "Sysdig": "sysdig",
+    "Drata": "drata",
+    "Vanta": "vanta",
+    "Secureframe": "secureframe",
+    "Orca Security": "orca",
+    "Wiz": "wiz",
+    "Abnormal Security": "abnormalsecurity",
+    "Recorded Future": "recordedfuture",
+    "Swimlane": "swimlane",
+    "Tines": "tines",
+
+    # DevOps / Platform
+    "HashiCorp": "hashicorp",
+    "PagerDuty": "pagerduty",
+    "New Relic": "newrelic",
+    "Splunk": "splunk",
+    "Sumo Logic": "sumologic",
+    "Dynatrace": "dynatrace",
+    "Honeycomb": "honeycomb",
+    "Grafana": "grafana",
+    "LaunchDarkly": "launchdarkly",
+    "Split": "split",
+    "Harness": "harness",
+    "Cortex": "cortexapps",
+    "OpsLevel": "opslevel",
+    "Backstage": "backstage",
+    "Port": "port",
+    "Humanitec": "humanitec",
+    "Pulumi": "pulumi",
+    "Spacelift": "spacelift",
+
+    # SaaS / CRM / Sales
+    "HubSpot": "hubspot",
+    "Zendesk": "zendesk",
+    "Intercom": "intercom",
+    "Freshworks": "freshworks",
+    "Gong": "gong",
+    "Salesloft": "salesloft",
+    "Outreach": "outreach",
+    "Clari": "clari",
+    "Chorus": "chorus",
+    "Revenue.io": "revenue",
     "Seismic": "seismic",
+    "Highspot": "highspot",
+    "Showpad": "showpad",
+    "Mindtickle": "mindtickle",
+    "Allego": "allego",
+    "Brainshark": "brainshark",
+    "Demandbase": "demandbase",
+    "6sense": "sixsense",
+    "Bombora": "bombora",
+    "ZoomInfo": "zoominfo",
+    "Apollo.io": "apolloio",
+    "Lusha": "lusha",
+    "Mixpanel": "mixpanel",
+    "Amplitude": "amplitude",
+    "Braze": "braze",
+    "Iterable": "iterable",
+    "Klaviyo": "klaviyo",
+    "Attentive": "attentive",
+    "Pendo": "pendo",
+    "FullStory": "fullstory",
+    "Heap": "heap",
+    "Gainsight": "gainsight",
+    "Totango": "totango",
+    "ChurnZero": "churnzero",
+    "Vitally": "vitally",
+
+    # Collaboration / Productivity
+    "Notion": "notion",
+    "Airtable": "airtable",
+    "Coda": "coda",
+    "Webflow": "webflow",
+    "Contentful": "contentful",
+    "Retool": "retool",
+    "Zapier": "zapier",
+    "Workato": "workato",
+    "Tray.io": "trayio",
+    "Make": "make",
+
+    # HR Tech
+    "Rippling": "rippling",
+    "Lattice": "lattice",
+    "Culture Amp": "cultureamp",
+    "BetterUp": "betterup",
+    "Leapsome": "leapsome",
+    "Workramp": "workramp",
+    "15Five": "15five",
+    "Betterworks": "betterworks",
+    "Navan": "navan",
+
+    # Fintech
+    "Stripe": "stripe",
+    "Plaid": "plaid",
+    "Brex": "brex",
+    "Ramp": "ramp",
+    "Airbase": "airbase",
+    "Zip": "zip",
+    "Vendr": "vendr",
+    "Coupa": "coupa",
+    "Tropic": "tropic",
+    "Zylo": "zylo",
+    "Mosaic": "mosaic",
+    "Pigment": "pigment",
+    "Planful": "planful",
+    "Anaplan": "anaplan",
+    "CaptivateIQ": "captivateiq",
+    "Spiff": "spiff",
+    "Xactly": "xactly",
+    "QuotaPath": "quotapath",
+    "Commissionly": "commissionly",
+
+    # Sports Tech
     "DraftKings": "draftkings",
     "FanDuel": "fanduel",
     "Sportradar": "sportradar",
-    "Whoop": "whoop",
     "Hudl": "hudl",
+    "Whoop": "whoop",
     "PrizePicks": "prizepicks",
+    "Underdog Fantasy": "underdogfantasy",
+    "Catapult": "catapultsports",
+    "Genius Sports": "geniussports",
+    "Stats Perform": "statsperform",
+    "Second Spectrum": "secondspectrum",
+    "SeatGeek": "seatgeek",
+    "Vividseats": "vividseats",
+    "Eventbrite": "eventbrite",
+    "Cvent": "cvent",
+
+    # Other notable tech
+    "Benchling": "benchling",
+    "Warp": "warp",
+    "Figma": "figma",
+    "Loom": "loom",
+    "Miro": "miro",
+    "DocuSign": "docusign",
+    "PandaDoc": "pandadoc",
+    "Ironclad": "ironclad",
+    "Clio": "clio",
+    "Twilio": "twilio",
+    "Sendbird": "sendbird",
+    "Bandwidth": "bandwidth",
+    "Vonage": "vonage",
+    "MessageBird": "messagebird",
+    "OpenPhone": "openphone",
+    "Aircall": "aircall",
+    "Dialpad": "dialpad",
+    "RingCentral": "ringcentral",
+    "Talkdesk": "talkdesk",
+    "Five9": "five9",
+    "Sprinklr": "sprinklr",
+    "Hootsuite": "hootsuite",
+    "Sprout Social": "sproutsocial",
+    "Later": "later",
+    "Buffer": "buffer",
+    "monday.com": "mondaydotcom",
+    "Asana": "asana",
+    "ClickUp": "clickup",
+    "Smartsheet": "smartsheet",
+    "Wrike": "wrike",
+    "Teamwork": "teamwork",
+    "Basecamp": "basecamp",
+    "Productboard": "productboard",
+    "Aha!": "ahadotio",
+    "Roadmunk": "roadmunk",
+    "Sigma Computing": "sigmacomputing",
+    "ThoughtSpot": "thoughtspot",
+    "Sisense": "sisense",
+    "Metabase": "metabase",
+    "Looker": "looker",
+    "Hex": "hex",
+    "Mode": "mode",
+    "Samsara": "samsara",
+    "Verkada": "verkada",
+    "Matterport": "matterport",
+    "Veeva": "veeva",
+    "Palantir": "palantir",
+    "C3.ai": "c3dotai",
+    "DataRobot": "datarobot",
+    "H2O.ai": "h2oai",
+    "Weights & Biases": "wandb",
+    "Determined AI": "determinedai",
+    "Labelbox": "labelbox",
+    "Scale AI": "scaleai",
+    "Snorkel AI": "snorkel",
+    "Aquant": "aquant",
+    "Observe.AI": "observeai",
+    "Cresta": "cresta",
+    "Uniphore": "uniphore",
+    "Deepgram": "deepgram",
+    "AssemblyAI": "assemblyai",
+    "Eleven Labs": "elevenlabs",
+    "Descript": "descript",
+    "Grammarly": "grammarly",
+    "Writer": "writer",
+    "Copy.ai": "copyai",
+    "Typeface": "typeface",
+    "Tome": "tome",
+    "Beautiful.ai": "beautifulai",
+    "Pitch": "pitch",
+    "Canva": "canva",
+    "Lottiefiles": "lottiefiles",
+    "Storyblok": "storyblok",
+    "Hygraph": "hygraph",
+    "Sanity": "sanity",
+    "Prismic": "prismic",
+    "Kontent.ai": "kontent",
+    "Agility CMS": "agilitycms",
+    "Bloomreach": "bloomreach",
+    "Sitecore": "sitecore",
+    "Acquia": "acquia",
+    "Optimizely": "optimizely",
+    "VWO": "wingify",
+    "Statsig": "statsig",
+    "Eppo": "eppo",
+    "GrowthBook": "growthbook",
+    "Kameleoon": "kameleoon",
+    "Insider": "useinsider",
+    "Nosto": "nosto",
+    "Dynamic Yield": "dynamicyield",
+    "Yotpo": "yotpo",
+    "Okendo": "okendo",
+    "Stamped": "stamped",
+    "LoyaltyLion": "loyaltylion",
+    "Smile.io": "smileio",
+    "Talon.One": "talonone",
+    "Antavo": "antavo",
+    "Emarsys": "emarsys",
+    "Sailthru": "sailthru",
+    "Marigold": "marigold",
+    "Delivra": "delivra",
+    "Omnisend": "omnisend",
+    "Drip": "drip",
+    "ActiveCampaign": "activecampaign",
+    "ConvertKit": "convertkit",
+    "Mailchimp": "mailchimp",
+    "Constant Contact": "constantcontact",
+    "Campaign Monitor": "campaignmonitor",
+    "Dotdigital": "dotdigital",
+    "Pardot": "pardot",
+    "Marketo": "marketo",
+    "Eloqua": "eloqua",
+    "Act-On": "acton",
+    "SharpSpring": "sharpspring",
+    "LeadSquared": "leadsquared",
+    "Pipedrive": "pipedrive",
+    "Copper": "copper",
+    "Close": "close",
+    "Nutshell": "nutshell",
+    "Insightly": "insightly",
+    "Nimble": "nimble",
+    "Streak": "streak",
+    "Salesflare": "salesflare",
+    "Zendesk Sell": "zendeskSell",
+    "Freshsales": "freshsales",
+    "Monday Sales CRM": "mondaycrm",
+    "noCRM.io": "nocrm",
+    "Apptivo": "apptivo",
 }
 
 # Lever company slugs
 LEVER_BOARDS = {
     "Box": "box",
     "Boomi": "boomi",
+    "Gong": "gong",
+    "Outreach": "outreach",
+    "SalesLoft": "salesloft",
+    "Drift": "drift",
+    "Chorus": "chorus",
+    "LeanData": "leandata",
+    "Chili Piper": "chilipiper",
+    "Calendly": "calendly",
+    "Mixmax": "mixmax",
+    "Yesware": "yesware",
+    "Groove": "groove",
+    "QuotaPath": "quotapath",
+    "Reprise": "reprise",
+    "Walnut": "walnut",
+    "Navattic": "navattic",
+    "Storylane": "storylane",
+    "Demostack": "demostack",
+    "Consensus": "consensus",
+    "Vivun": "vivun",
+    "Klue": "klue",
+    "Crayon": "crayon",
+    "Kompyte": "kompyte",
+    "G2": "g2",
+    "TrustRadius": "trustradius",
+    "Medallia": "medallia",
+    "Qualtrics": "qualtrics",
+    "InMoment": "inmoment",
+    "Birdeye": "birdeye",
+    "Podium": "podium",
+    "Yext": "yext",
+    "Uberall": "uberall",
+    "SOCi": "soci",
+    "Reputation": "reputation",
+    "Sprinklr": "sprinklr",
+    "Oktopost": "oktopost",
+    "Brandwatch": "brandwatch",
+    "Meltwater": "meltwater",
+    "Cision": "cision",
+    "Mention": "mention",
+    "Talkwalker": "talkwalker",
+    "Audiense": "audiense",
+    "Pulsar": "pulsar",
+    "Affinio": "affinio",
+    "NetBase Quid": "netbasequid",
+    "Synthesio": "synthesio",
+    "Infegy": "infegy",
+    "Nuvi": "nuvi",
+    "Klear": "klear",
+    "Traackr": "traackr",
+    "IZEA": "izea",
+    "CreatorIQ": "creatoriq",
+    "Grin": "grin",
+    "Aspire": "aspire",
+    "Mavrck": "mavrck",
+    "Dovetale": "dovetale",
+    "Impact": "impact",
+    "PartnerStack": "partnerstack",
+    "Alliances": "alliances",
+    "Crossbeam": "crossbeam",
+    "Reveal": "reveal",
+    "Tackle.io": "tackle",
+    "WorkSpan": "workspan",
 }
 
 # Ashby company slugs
 ASHBY_BOARDS = {
     "OpenAI": "openai",
+    "Linear": "linear",
+    "Vercel": "vercel",
+    "Loom": "loom",
+    "Figma": "figma",
+    "Notion": "notion",
+    "Perplexity": "perplexityai",
+    "Mistral AI": "mistral",
+    "Together AI": "together",
+    "Replicate": "replicate",
+    "Modal": "modal",
+    "Anyscale": "anyscale",
+    "Weights & Biases": "wandb",
+    "Roboflow": "roboflow",
+    "Encord": "encord",
+    "V7": "v7labs",
+    "Superannotate": "superannotate",
+    "Hasura": "hasura",
+    "Neon": "neon",
+    "Supabase": "supabase",
+    "PlanetScale": "planetscale",
+    "Xata": "xata",
+    "Turso": "turso",
+    "Railway": "railway",
+    "Render": "render",
+    "Fly.io": "fly",
+    "Temporal": "temporal",
+    "Inngest": "inngest",
+    "Trigger.dev": "trigger",
+    "Resend": "resend",
+    "Loops": "loops",
+    "Postmark": "postmark",
+    "Customer.io": "customerio",
+    "Chameleon": "chameleon",
+    "Appcues": "appcues",
+    "UserPilot": "userpilot",
+    "Userflow": "userflow",
+    "Userpilot": "userpilot",
+    "Aptrinsic": "aptrinsic",
+    "Stonly": "stonly",
+    "Intercom": "intercom",
+    "Front": "front",
+    "Missive": "missive",
+    "Superhuman": "superhuman",
+    "Shortwave": "shortwave",
+    "Sanebox": "sanebox",
+    "Spark Mail": "sparkmail",
+    "Newton": "newton",
+    "Mimestream": "mimestream",
+    "Hey": "hey",
+    "Fastmail": "fastmail",
+    "Proton": "proton",
+    "Skiff": "skiff",
+    "Notion Mail": "notionmail",
+    "Ramp": "ramp",
+    "Mercury": "mercury",
+    "Brex": "brex",
+    "Arc": "arc",
+    "Warp": "warp",
+    "Cursor": "cursor",
+    "Windsurf": "windsurf",
+    "Tabnine": "tabnine",
+    "Codeium": "codeium",
+    "Sourcegraph": "sourcegraph",
+    "Swimm": "swimm",
+    "Mintlify": "mintlify",
+    "ReadMe": "readme",
+    "Gitbook": "gitbook",
+    "Confluence": "confluence",
+    "Slab": "slab",
+    "Outline": "outline",
+    "Nuclino": "nuclino",
+    "Slite": "slite",
+    "Tettra": "tettra",
+    "Helpjuice": "helpjuice",
+    "Document360": "document360",
+    "Guru": "getguru",
+    "Bloomfire": "bloomfire",
+    "Elium": "elium",
+    "Shelf.io": "shelf",
+    "Stonly": "stonly",
+    "Klutch": "klutch",
 }
 
 APP_URL = "http://localhost:3000"
@@ -121,6 +560,111 @@ def is_relevant_title(title: str) -> bool:
     for keyword in ROLE_KEYWORDS:
         if keyword in title_lower:
             return True
+    return False
+
+
+def is_sdr_title(title: str) -> bool:
+    """Check if job title is specifically an SDR/BDR role."""
+    t = title.lower()
+    return any(kw in t for kw in [
+        "sales development", "sdr", "bdr", "business development representative",
+        "business development rep", "outbound sales", "outbound representative",
+    ])
+
+
+# Locations to accept for SDR roles: target cities or remote US
+TARGET_LOCATION_PATTERNS = [
+    r"remote",
+    r"new york|nyc|manhattan|brooklyn|queens|bronx",
+    r"los angeles|la\b|santa monica|culver city|west hollywood|hollywood",
+    r"philadelphia|philly",
+    r"united states|usa|\bus\b",          # "Remote, US" or "Remote United States"
+]
+
+FOREIGN_LOCATION_PATTERNS = [
+    r"united kingdom|uk\b|great britain|england|london|manchester|edinburgh",
+    r"canada|toronto|vancouver|montreal|calgary|ottawa",
+    r"australia|sydney|melbourne|brisbane|perth",
+    r"india|bangalore|bengaluru|delhi|mumbai|hyderabad|pune|chennai|gurgaon|gurugram|noida|kolkata|ahmedabad|, ind\b",
+    r"ireland|dublin",
+    r"germany|berlin|munich|hamburg|frankfurt",
+    r"france|paris|lyon|toulouse",
+    r"netherlands|amsterdam|rotterdam",
+    r"spain|madrid|barcelona",
+    r"israel|tel aviv",
+    r"brazil|sao paulo|são paulo|rio de janeiro",
+    r"singapore",
+    r"japan|tokyo|osaka",
+    r"south korea|korea|seoul",
+    r"poland|warsaw|krakow",
+    r"sweden|stockholm",
+    r"denmark|copenhagen",
+    r"norway|oslo",
+    r"finland|helsinki",
+    r"switzerland|zurich|geneva",
+    r"austria|vienna",
+    r"belgium|brussels",
+    r"portugal|lisbon",
+    r"czech|prague",
+    r"hungary|budapest",
+    r"romania|bucharest",
+    r"ukraine|kyiv",
+    r"russia|moscow",
+    r"china|beijing|shanghai|shenzhen",
+    r"hong kong",
+    r"taiwan|taipei",
+    r"indonesia|jakarta",
+    r"thailand|bangkok",
+    r"philippines|manila",
+    r"vietnam|ho chi minh",
+    r"malaysia|kuala lumpur",
+    r"mexico|mexico city",
+    r"colombia|bogota",
+    r"argentina|buenos aires",
+    r"chile|santiago",
+    r"peru|lima",
+    r"south africa|johannesburg|cape town",
+    r"nigeria|lagos",
+    r"kenya|nairobi",
+    r"egypt|cairo",
+    r"uae|dubai|abu dhabi",
+    r"saudi arabia|riyadh",
+]
+
+
+def is_us_target_location(location: str) -> bool:
+    """
+    Strict location filter:
+    - NYC / LA / Philadelphia: hybrid or in-office OK
+    - Anywhere else: remote-only
+    - Foreign: always rejected
+    """
+    if not location:
+        return True  # No location info — keep (could be remote)
+    loc = location.lower().strip()
+
+    # Always reject foreign locations
+    for pattern in FOREIGN_LOCATION_PATTERNS:
+        if re.search(pattern, loc):
+            return False
+
+    # Accept if explicitly remote (remote-only rule for non-target cities)
+    if re.search(r'\bremote\b', loc):
+        return True
+
+    # Accept "United States" / "USA" / "US" alone — no specific city = nationwide/remote
+    if re.match(r'^(united states|usa?|u\.s\.?)\s*$', loc):
+        return True
+
+    # Accept target cities (hybrid/in-office OK here)
+    if re.search(r'new york|nyc|manhattan|brooklyn|queens|new jersey', loc):
+        return True
+    if re.search(r'los angeles|\bla,|\bla\b|santa monica|culver city|west hollywood|burbank|pasadena|long beach', loc):
+        return True
+    if re.search(r'philadelphia|philly', loc):
+        return True
+
+    # Everything else is a specific non-target city — reject
     return False
 
 
@@ -377,7 +921,7 @@ def send_to_app(jobs: list[JobListing]) -> bool:
     if not jobs:
         return True
 
-    payload = json.dumps([asdict(j) for j in jobs]).encode("utf-8")
+    payload = json.dumps({"jobs": [asdict(j) for j in jobs]}).encode("utf-8")
     req = urllib.request.Request(
         f"{APP_URL}/api/jobs/search",
         data=payload,
@@ -403,57 +947,69 @@ def send_to_app(jobs: list[JobListing]) -> bool:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Job scraper for SE/SA roles")
+    parser = argparse.ArgumentParser(description="Job scraper for SE/SA/SDR roles")
     parser.add_argument("--source", choices=["greenhouse", "lever", "ashby", "indeed", "builtin", "yc", "careers", "all"], default="all")
     parser.add_argument("--output", help="Save to JSON file instead of sending to app")
     parser.add_argument("--dry-run", action="store_true", help="Just print jobs, don't send")
+    parser.add_argument("--sdr", action="store_true", help="SDR roles only (NYC/LA/Philly/Remote US)")
     args = parser.parse_args()
 
     all_jobs: list[JobListing] = []
 
-    print("\n🔍 Job Scraper for Joesh Sethi — SE/SA Track\n")
+    mode = "SDR-only (NYC/LA/Philly/Remote US)" if args.sdr else "SE/SA Track"
+    print(f"\n🔍 Job Scraper for Joesh Sethi — {mode}\n")
     print("=" * 50)
 
     if args.source in ("greenhouse", "all"):
-        print("\n📋 Greenhouse Boards:")
+        print(f"\n📋 Greenhouse Boards ({len(GREENHOUSE_BOARDS)} companies):")
         for company, slug in GREENHOUSE_BOARDS.items():
             jobs = scrape_greenhouse(company, slug)
+            if args.sdr:
+                jobs = [j for j in jobs if is_sdr_title(j.title) and is_us_target_location(j.location)]
             all_jobs.extend(jobs)
-            print(f"    Found {len(jobs)} relevant roles at {company}")
-            time.sleep(0.5)
+            if jobs:
+                print(f"    {company}: {len(jobs)} roles")
+            time.sleep(0.3)
 
     if args.source in ("lever", "all"):
-        print("\n📋 Lever Boards:")
+        print(f"\n📋 Lever Boards ({len(LEVER_BOARDS)} companies):")
         for company, slug in LEVER_BOARDS.items():
             jobs = scrape_lever(company, slug)
+            if args.sdr:
+                jobs = [j for j in jobs if is_sdr_title(j.title) and is_us_target_location(j.location)]
             all_jobs.extend(jobs)
-            print(f"    Found {len(jobs)} relevant roles at {company}")
-            time.sleep(0.5)
+            if jobs:
+                print(f"    {company}: {len(jobs)} roles")
+            time.sleep(0.3)
 
     if args.source in ("ashby", "all"):
-        print("\n📋 Ashby Boards:")
+        print(f"\n📋 Ashby Boards ({len(ASHBY_BOARDS)} companies):")
         for company, slug in ASHBY_BOARDS.items():
             jobs = scrape_ashby(company, slug)
+            if args.sdr:
+                jobs = [j for j in jobs if is_sdr_title(j.title) and is_us_target_location(j.location)]
             all_jobs.extend(jobs)
-            print(f"    Found {len(jobs)} relevant roles at {company}")
-            time.sleep(0.5)
+            if jobs:
+                print(f"    {company}: {len(jobs)} roles")
+            time.sleep(0.3)
 
-    if args.source in ("indeed", "all"):
-        print("\n📋 Indeed RSS:")
-        indeed_jobs = scrape_indeed_rss()
-        all_jobs.extend(indeed_jobs)
-        print(f"    Found {len(indeed_jobs)} relevant roles")
+    if not args.sdr:
+        if args.source in ("indeed", "all"):
+            print("\n📋 Indeed RSS:")
+            indeed_jobs = scrape_indeed_rss()
+            all_jobs.extend(indeed_jobs)
+            print(f"    Found {len(indeed_jobs)} relevant roles")
 
-    if args.source in ("builtin", "all"):
-        print("\n📋 BuiltIn:")
-        builtin_jobs = scrape_builtin()
-        all_jobs.extend(builtin_jobs)
+        if args.source in ("builtin", "all"):
+            print("\n📋 BuiltIn:")
+            builtin_jobs = scrape_builtin()
+            all_jobs.extend(builtin_jobs)
 
-    if args.source in ("yc", "all"):
-        print("\n📋 Y Combinator Jobs:")
-        yc_jobs = scrape_yc_jobs()
-        all_jobs.extend(yc_jobs)
-        print(f"    Found {len(yc_jobs)} relevant roles")
+        if args.source in ("yc", "all"):
+            print("\n📋 Y Combinator Jobs:")
+            yc_jobs = scrape_yc_jobs()
+            all_jobs.extend(yc_jobs)
+            print(f"    Found {len(yc_jobs)} relevant roles")
 
     # Summary
     print(f"\n{'=' * 50}")
@@ -468,6 +1024,12 @@ def main():
             seen.add(key)
             unique_jobs.append(job)
     print(f"Unique jobs: {len(unique_jobs)}")
+
+    if args.sdr and unique_jobs:
+        print("\nSDR roles found:")
+        for j in sorted(unique_jobs, key=lambda x: x.company):
+            remote_tag = " [REMOTE]" if j.is_remote or "remote" in j.location.lower() else ""
+            print(f"  {j.company:30s} {j.title:50s} {j.location}{remote_tag}")
 
     if args.dry_run:
         for job in unique_jobs:
